@@ -4,7 +4,6 @@ import time
 from platform import python_version as y
 from random import choice
 from sys import argv
-from html import escape 
 
 from pyrogram import __version__ as pyrover
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
