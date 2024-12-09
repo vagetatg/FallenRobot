@@ -4,6 +4,7 @@ import time
 from platform import python_version as y
 from random import choice
 from sys import argv
+from html import escape 
 
 from pyrogram import __version__ as pyrover
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
@@ -106,6 +107,9 @@ buttons = [
         InlineKeyboardButton(text="Aʙᴏᴜᴛ", callback_data="dazai_"),
     ],
     [
+        InlineKeyboardButton(text="waifu", callback_data="waifu"),
+    ],
+    [
         InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ", url=f"https://t.me/lolpagalokigc"),
         InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
@@ -113,6 +117,66 @@ buttons = [
         InlineKeyboardButton(text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
     ],
 ]
+
+async def button(update: Update, context: CallbackContext) -> None:
+    query = update.callback_query
+    await query.answer()
+
+    if query.data == 'waifu':
+        help_text = """
+***💖 Waifu Collector Help 💖***
+
+        **/collect**: Catch waifus (only works in groups)  
+        **/fav**: Add fav waifu 💕  
+        **/trade**: Trade waifus 🔄  
+        **/gift**: Gift waifus 🎁  
+        **/collection**: View your waifus 📜  
+        **/topgroups**: Top waifu groups 🏆  
+        **/top**: Top users with waifus 🌸  
+        **/ctop**: Your chat's rank 💬  
+        **/changetime**: Set waifu appear time ⏳
+        """
+        help_keyboard = [[InlineKeyboardButton("⤾ Bᴀᴄᴋ", callback_data='back')]]
+        reply_markup = InlineKeyboardMarkup(help_keyboard)
+        
+        await context.bot.edit_message_caption(chat_id=update.effective_chat.id, message_id=query.message.message_id, caption=help_text, reply_markup=reply_markup, parse_mode='markdown')
+
+elif query.data == 'back':
+
+        caption = f """
+*Hello* {}[✨]({})
+ I Aᴍ Yᴏᴜʀ  HANABI. HYUGA ᴛʜᴇᴍᴇᴅ ᴍᴀɴɢᴇᴍᴇɴᴛ ʙᴏᴛ 
+▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
+🌌 Cᴏɴᴛʀᴏʟ Yᴏᴜʀ Gʀᴏᴜᴘ Eғғᴏʀᴛʟᴇssʟʏ.Tʏᴘᴇ /ʜᴇʟᴘ Tᴏ Uɴᴠᴇɪʟ Yᴏᴜʀ Lᴏᴠᴇ.
+Lᴇᴛ's Bʀɪɴɢ Oʀᴅᴇʀ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ!.
+"""
+
+        
+        buttons = [
+    [
+        InlineKeyboardButton(
+            text="Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+        ),
+    ],
+    [
+        InlineKeyboardButton(text="Mᴜsɪᴄ", callback_data="Music_"),
+        InlineKeyboardButton(text="Aʙᴏᴜᴛ", callback_data="dazai_"),
+    ],
+    [
+        InlineKeyboardButton(text="waifu", callback_data="waifu"),
+    ],
+    [
+        InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ", url=f"https://t.me/lolpagalokigc"),
+        InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
+    ],
+    [
+        InlineKeyboardButton(text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
+    ],
+        ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+
+        await context.bot.edit_message_caption(chat_id=update.effective_chat.id, message_id=query.message.message_id, caption=caption, reply_markup=reply_markup, parse_mode='markdown')
 
 GROUP_START_BTN = [
     [
