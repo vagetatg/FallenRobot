@@ -5,7 +5,7 @@ class Config(object):
     OWNER_ID = "7180469677"
     sudo_users = "7078181502", "5884969921", "5289413488", "7180469677", "1843986084"
     GROUP_ID = -1002009280180
-    TOKEN = "7698227314:AAFXpcHqU2ThPMaZK2DByzedj0Ma0ruVVnc"
+    TOKEN = ""
     mongo_url = "mongodb+srv://bikash:bikash@bikash.3jkvhp7.mongodb.net/?retryWrites=true&w=majority"
     PHOTO_URL = ["https://files.catbox.moe/ji0au6.jpg", "https://files.catbox.moe/gs0okz.jpg"]
     SUPPORT_CHAT = "PiratesMainchat"
