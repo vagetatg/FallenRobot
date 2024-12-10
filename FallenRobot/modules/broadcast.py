@@ -76,3 +76,22 @@ async def broadcast_cmd(client: Client, message: Message):
     await tex.edit_text(
         f"<b>Message Successfully Sent</b> \nTotal Users: <code>{usersss}</code> \nFailed Users: <code>{uerror}</code> \nTotal GroupChats: <code>{chatttt}</code> \nFailed GroupChats: <code>{cerror}</code>"
     )
+
+__mod_name__ = "waifu"
+
+# ғᴏʀ ʜᴇʟᴘ ᴍᴇɴᴜ
+
+# """
+__help__ = """
+***💖 Waifu Collector Help 💖***
+
+        **/collect**: Catch waifus (only works in groups)  
+        **/fav**: Add fav waifu 💕  
+        **/trade**: Trade waifus 🔄  
+        **/gift**: Gift waifus 🎁  
+        **/collection**: View your waifus 📜  
+        **/topgroups**: Top waifu groups 🏆  
+        **/top**: Top users with waifus 🌸  
+        **/ctop**: Your chat's rank 💬  
+        **/changetime**: Set waifu appear time ⏳
+        """
